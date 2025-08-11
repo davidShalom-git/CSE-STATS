@@ -143,7 +143,7 @@ const Admin = () => {
     setError(null);
 
     try {
-      const response = await fetch('http://localhost:1200/api/vote/stats');
+      const response = await fetch('https://cse-election.vercel.app/api/vote/stats');
       const data = await response.json();
 
       if (response.ok && data.success) {

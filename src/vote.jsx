@@ -17,7 +17,7 @@ const VotingStats = () => {
   // Fetch candidates dynamically
   const fetchCandidates = useCallback(async () => {
     try {
-      const res = await fetch('http://localhost:1200/api/vote/candidates');
+      const res = await fetch('https://cse-election.vercel.app/api/vote/candidates');
       const data = await res.json();
       if (res.ok && data.success) {
         const styledCandidates = data.candidates.map((candidate, idx) => ({
@@ -39,7 +39,7 @@ const VotingStats = () => {
   // Fetch voting stats
   const fetchVotingStats = useCallback(async () => {
     try {
-      const response = await fetch('http://localhost:1200/api/vote/stats', {
+      const response = await fetch('https://cse-election.vercel.app/api/vote/stats', {
         headers: { Authorization: `Bearer ${token}` }
       });
       const data = await response.json();
